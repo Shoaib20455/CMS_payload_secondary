@@ -372,13 +372,13 @@
   @apply w-[66.625rem] h-[39.0625rem] left-[57.6875rem] top-[0rem] absolute object-contain z-[20];
 }
 .bb-hero-012 {
-  @apply relative z-20 h-[43.75rem] w-full overflow-hidden bg-[#012F42] lg:hidden;
+  @apply relative z-20 min-h-[32rem] w-full overflow-hidden bg-[#012F42] lg:hidden;
 }
 .bb-hero-013 {
   @apply absolute inset-0 z-[1] h-full w-full object-cover opacity-[0.05];
 }
 .bb-hero-014 {
-  @apply relative z-10 flex h-full flex-col px-5 pb-0 pt-8 sm:px-8 sm:pt-10 md:px-10;
+  @apply relative z-10 flex h-full flex-col justify-center px-5 pt-4 sm:px-8 sm:pt-6 md:px-10;
 }
 .bb-hero-015 {
   @apply max-w-[42rem];
@@ -398,20 +398,14 @@
 .bb-hero-020 {
   @apply mt-5 inline-flex h-[3.125rem] w-full items-center justify-center rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[1.0625rem] font-medium capitalize text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 sm:w-[15.5rem];
 }
-.bb-hero-021 {
-  @apply relative mt-5 min-h-0 flex-1 overflow-visible sm:mt-6;
-}
-.bb-hero-022 {
-  @apply absolute bottom-7 left-1/2 w-[21rem] max-w-[88vw] -translate-x-1/2 sm:bottom-8 sm:w-[24rem] sm:max-w-[68vw] md:w-[31rem] md:max-w-[62vw];
-}
 .bb-hero-023 {
-  @apply absolute bottom-[-20%] right-[25%] z-10 h-[118%] w-[12%] rotate-[30deg] bg-[#FE8F02];
+  @apply absolute bottom-[-10%] right-[10%] z-[2] h-[120%] w-[20%] rotate-[30deg] bg-[#FE8F02] opacity-[0.15] pointer-events-none origin-bottom-right;
 }
 .bb-hero-024 {
-  @apply absolute bottom-[-10%] right-[18%] z-10 h-[82%] w-[6%] rotate-[30deg] bg-[#FE8F02];
+  @apply absolute bottom-[5%] right-[0%] z-[2] h-[70%] w-[10%] rotate-[30deg] bg-[#FE8F02] opacity-[0.15] pointer-events-none origin-bottom-right;
 }
 .bb-hero-025 {
-  @apply relative z-20 h-auto w-full object-contain;
+  @apply absolute bottom-0 left-1/2 z-[3] h-auto w-[72%] max-w-[32rem] -translate-x-1/2 object-contain opacity-[0.15];
 }
 .bb-intro-sections-001 {
   @apply w-[60rem] h-[41.25rem] left-[0rem] top-[58.375rem] absolute bg-[#012F42];

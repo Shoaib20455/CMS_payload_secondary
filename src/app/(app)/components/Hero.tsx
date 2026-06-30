@@ -66,6 +66,15 @@ export default function Hero() {
           width={1920}
           height={700} />
         
+        <div className="bb-hero-023" />
+        <div className="bb-hero-024" />
+
+        <Image
+          className="bb-hero-025"
+          src="/Images/Truck_Original_Sourced.webp"
+          alt="White Box Truck Dispatch"
+          width={1650}
+          height={953} />
 
         <div className="bb-hero-014">
           <div className="bb-hero-015">
@@ -85,20 +94,6 @@ export default function Hero() {
             <button className="bb-hero-020">
               Start Trucking Dispatch
             </button>
-          </div>
-
-          <div className="bb-hero-021">
-            <div className="bb-hero-022">
-              <div className="bb-hero-023" />
-              <div className="bb-hero-024" />
-              <Image
-                className="bb-hero-025"
-                src="/Images/Truck_Original_Sourced.webp"
-                alt="White Box Truck Dispatch"
-                width={1650}
-                height={953} />
-              
-            </div>
           </div>
         </div>
       </section>
