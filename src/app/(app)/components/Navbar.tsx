@@ -5,16 +5,23 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
-const navItems = ["Home", "About", "Service", "Blog", "Contact", "State", "Pricing"];
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Service", href: "/service" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+  { label: "State", href: "/state" },
+  { label: "Pricing", href: "/pricing" },
+];
 
-function getFlowHref(item: string) {
-  if (item === "Home") return "/";
-  return `/${item.toLowerCase()}`;
+function isNavItemActive(pathname: string, href: string) {
+  if (href === "/") return pathname === href;
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 export default function Navbar() {
   const pathname = usePathname();
-  const currentActive = pathname === "/" ? "Home" : navItems.find((item) => pathname.startsWith(getFlowHref(item))) || "Home";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -35,20 +42,21 @@ export default function Navbar() {
           className="absolute inset-y-0 left-28 right-52 flex items-center justify-center gap-5 xl:gap-8 2xl:gap-[3.125rem]"
           aria-label="Primary navigation"
         >
-          {navItems.map((item) => {
-            const isActive = item === currentActive;
+          {navItems.map(({ label, href }) => {
+            const isActive = isNavItemActive(pathname, href);
 
             return (
               <Link
-                key={item}
-                href={getFlowHref(item)}
+                key={href}
+                href={href}
+                aria-current={isActive ? "page" : undefined}
                 className={`font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200 ${
                   isActive
                     ? "text-[#FE8F02]"
                     : "text-[#111827] hover:text-[#FE8F02]"
                 }`}
               >
-                {item}
+                {label}
               </Link>
             );
           })}
@@ -118,13 +126,14 @@ export default function Navbar() {
         }`}
       >
         <nav className="flex w-full flex-col gap-1 px-5 py-4 sm:px-8">
-          {navItems.map((item) => {
-            const isActive = item === currentActive;
+          {navItems.map(({ label, href }) => {
+            const isActive = isNavItemActive(pathname, href);
 
             return (
               <Link
-                key={item}
-                href={getFlowHref(item)}
+                key={href}
+                href={href}
+                aria-current={isActive ? "page" : undefined}
                 onClick={() => setIsMenuOpen(false)}
                 className={`rounded-[0.3125rem] px-3 py-3 font-[family-name:var(--font-dm-sans)] text-[1rem] font-bold leading-6 no-underline transition-colors ${
                   isActive
@@ -132,7 +141,7 @@ export default function Navbar() {
                     : "text-[#111827] hover:bg-[#F8FAFC] hover:text-[#FE8F02]"
                 }`}
               >
-                {item}
+                {label}
               </Link>
             );
           })}
