@@ -436,7 +436,7 @@
   @apply w-[35.1875rem] left-[71.6875rem] top-[105.8125rem] absolute text-white text-[3rem] font-[family-name:var(--font-outfit)] font-bold break-words;
 }
 .bb-intro-sections-008 {
-  @apply w-[35.8125rem] h-[15.75rem] left-[71.6875rem] top-[118.9375rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[1.75rem];
+  @apply w-[35.8125rem] h-[15.75rem] left-[71.6875rem] top-[119.9375rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[1.75rem];
 }
 .bb-intro-sections-009 {
   @apply w-[60rem] h-[41.25rem] left-[0rem] top-[140.875rem] absolute bg-[#012F42];
