@@ -7,27 +7,38 @@ import type { Post } from "@/payload-types";
 
 const publishedWhere = { status: { equals: "published" as const } };
 
-const fallbackPosts: Record<string, { title: string; metaDescription: string }> = {
+const fallbackPosts: Record<string, { title: string; metaDescription: string; image: string }> = {
   "why-box-truck-owners-lose-profitable-loads": {
     title: "Why Box Truck Owners Lose Profitable Loads",
     metaDescription: "Common mistakes box truck owner-operators make when booking freight and how to avoid them.",
+    image: "/Images/Rectangle 249@2x.webp",
   },
   "how-dispatch-services-save-time": {
     title: "How Dispatch Services Save Time",
     metaDescription: "Learn how professional dispatch services help box truck operators save time and increase revenue.",
+    image: "/Images/Rectangle 250@2x.webp",
   },
   "top-mistakes-new-box-truck-businesses": {
     title: "Top Mistakes New Box Truck Businesses Make",
     metaDescription: "Avoid these common pitfalls when starting your box truck business.",
+    image: "/Images/Rectangle 251@2x.webp",
   },
 };
 
-function buildFallbackPost(slug: string, data: { title: string; metaDescription: string }): Post {
+function buildFallbackPost(
+  slug: string,
+  data: { title: string; metaDescription: string; image: string },
+): Post {
   return {
     id: 0,
     title: data.title,
     slug,
     metaDescription: data.metaDescription,
+    featureImage: {
+      id: 0,
+      alt: data.title,
+      url: data.image,
+    },
     updatedAt: new Date().toISOString(),
     createdAt: new Date().toISOString(),
   } as Post;

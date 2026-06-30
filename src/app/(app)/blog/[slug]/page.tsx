@@ -74,7 +74,16 @@ export default async function BlogDetailPage({
     (author?.name as string) || (author?.email as string) || "Professional";
   const categoryName = (category?.name as string) || "Category";
   const categorySlug = (category?.slug as string) || "";
-  const featureImageUrl = (featureImage?.url as string) || "";
+  const featureImageSizes =
+    featureImage?.sizes && typeof featureImage.sizes === "object"
+      ? (featureImage.sizes as Record<string, unknown>)
+      : null;
+  const articleImage =
+    featureImageSizes?.article && typeof featureImageSizes.article === "object"
+      ? (featureImageSizes.article as Record<string, unknown>)
+      : null;
+  const featureImageUrl =
+    (articleImage?.url as string) || (featureImage?.url as string) || "";
   const featureImageAlt = (featureImage?.alt as string) || post.title;
   const content = isRichText(post.content) ? post.content : null;
   const faqs = ((Array.isArray(post.faqs) ? post.faqs : []).filter(

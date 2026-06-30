@@ -2,7 +2,14 @@ import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
 
 const mediaOrigin = process.env.NEXT_PUBLIC_MEDIA_URL;
-const remotePatterns = mediaOrigin ? [new URL(`${mediaOrigin.replace(/\/$/, "")}/**`)] : [];
+const remotePatterns: NonNullable<NonNullable<NextConfig["images"]>["remotePatterns"]> = [
+  {
+    protocol: "https",
+    hostname: "*.public.blob.vercel-storage.com",
+    pathname: "/**",
+  },
+  ...(mediaOrigin ? [new URL(`${mediaOrigin.replace(/\/$/, "")}/**`)] : []),
+];
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
