@@ -38,7 +38,7 @@ export default function Hero() {
 
         {/* Paragraph 2 */}
         <div className="bb-hero-009">
-          No more clashes with greedy brokers or deadhead trips! Resolute Logisticsâ€™ box truck dispatch service will ensure that your box truck is always loaded and keeps generating profit for you instead of burning money as well as time and gas. You drive, we care!
+          No more clashes with greedy brokers or deadhead trips! Resolute Logistics box truck dispatch service will ensure that your box truck is always loaded and keeps generating profit for you instead of burning money as well as time and gas. You drive, we care!
         </div>
 
         {/* Button */}
