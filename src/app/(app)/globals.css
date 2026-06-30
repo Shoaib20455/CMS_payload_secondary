@@ -421,7 +421,7 @@
   @apply w-[35.1875rem] left-[12.5rem] top-[68.125rem] absolute text-white text-[3rem] font-[family-name:var(--font-outfit)] font-bold break-words;
 }
 .bb-intro-sections-003 {
-  @apply w-[35.8125rem] h-[8.5625rem] left-[12.5rem] top-[81.25rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[1.75rem];
+  @apply w-[35.8125rem] h-[8.5625rem] left-[12.5rem] top-[82.25rem] absolute text-[rgba(255,255,255,0.70)] text-[1.125rem] font-[family-name:var(--font-dm-sans)] font-normal break-words leading-[1.75rem];
 }
 .bb-intro-sections-004 {
   @apply w-[60rem] h-[41.25rem] left-[60rem] top-[58.375rem] absolute object-cover;
