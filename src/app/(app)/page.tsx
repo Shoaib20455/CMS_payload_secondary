@@ -7,8 +7,8 @@ import PricingSection from "./components/PricingSection";
 import ReadyTruckSection from "./components/ReadyTruckSection";
 import ServicesProcessSection from "./components/ServicesProcessSection";
 import StatePickerCard from "./components/StatePickerCard";
-import TestimonialsSection from "./components/TestimonialsSection";
 import WhyChooseUsSection from "./components/WhyChooseUsSection";
+import TestimonialsSection from "./components/TestimonialsSection";
 
 export const metadata: Metadata = {
   alternates: {
@@ -32,7 +32,9 @@ export default function HomePage() {
         <PricingSection />
         <ReadyTruckSection />
         <BlogSection />
-        <TestimonialsSection />
+        <div className="lg:absolute lg:inset-x-0 lg:top-[454.75rem]">
+          <TestimonialsSection />
+        </div>
       </div>
     </>
   );
