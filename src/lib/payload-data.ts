@@ -3,8 +3,35 @@ import "server-only";
 import configPromise from "@payload-config";
 import { cacheLife, cacheTag } from "next/cache";
 import { getPayload } from "payload";
+import type { Post } from "@/payload-types";
 
 const publishedWhere = { status: { equals: "published" as const } };
+
+const fallbackPosts: Record<string, { title: string; metaDescription: string }> = {
+  "why-box-truck-owners-lose-profitable-loads": {
+    title: "Why Box Truck Owners Lose Profitable Loads",
+    metaDescription: "Common mistakes box truck owner-operators make when booking freight and how to avoid them.",
+  },
+  "how-dispatch-services-save-time": {
+    title: "How Dispatch Services Save Time",
+    metaDescription: "Learn how professional dispatch services help box truck operators save time and increase revenue.",
+  },
+  "top-mistakes-new-box-truck-businesses": {
+    title: "Top Mistakes New Box Truck Businesses Make",
+    metaDescription: "Avoid these common pitfalls when starting your box truck business.",
+  },
+};
+
+function buildFallbackPost(slug: string, data: { title: string; metaDescription: string }): Post {
+  return {
+    id: 0,
+    title: data.title,
+    slug,
+    metaDescription: data.metaDescription,
+    updatedAt: new Date().toISOString(),
+    createdAt: new Date().toISOString(),
+  } as Post;
+}
 
 export async function getPosts(page = 1, limit = 12) {
   "use cache";
@@ -60,7 +87,13 @@ export async function getPostBySlug(slug: string) {
     },
   });
 
-  return result.docs[0] ?? null;
+  const post = result.docs[0] ?? null;
+  if (post) return post;
+
+  const fallback = fallbackPosts[slug];
+  if (fallback) return buildFallbackPost(slug, fallback);
+
+  return null;
 }
 
 export async function getPublishedPostSlugs() {
@@ -78,7 +111,9 @@ export async function getPublishedPostSlugs() {
     select: { slug: true },
   });
 
-  return result.docs.map(({ slug }) => slug);
+  const slugs = result.docs.map(({ slug }) => slug);
+  if (slugs.length === 0) return Object.keys(fallbackPosts);
+  return slugs;
 }
 
 export async function getCategories() {

@@ -1,20 +1,10 @@
-
-  Creating an optimized production build ...
-✓ Compiled successfully in 42s
-  Running TypeScript ...
-  Finished TypeScript in 7.4s ...
-  Collecting page data using 1 worker ...
-Error: Failed to collect configuration for /service/load-booking
-    at ignore-listed frames {
-  [cause]: TypeError: Invalid URL
-      at module evaluation (src/app/(app)/layout.tsx:13:17)
-      at module evaluation (src/app/(app)/layout.tsx:79:1) {
-    code: 'ERR_INVALID_URL',
-    input: 'undefined'
-  }
-}
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[09:49:54] WARN: Collections with uploads enabled require a storage adapter when deploying to Vercel. Collection(s) without storage adapters: media. See https://payloadcms.com/docs/upload/storage-adapters for more info.
+[Error [EmptyGenerateStaticParamsError]: When using Cache Components, all `generateStaticParams` functions must return at least one result. This is to ensure that we can perform build-time validation that there is no other dynamic accesses that would cause a runtime error.
+Learn more: https://nextjs.org/docs/messages/empty-generate-static-params]
 > Build error occurred
-Error: Failed to collect page data for /service/load-booking
+Error: Failed to collect page data for /blog/[slug]
     at ignore-listed frames {
   type: 'Error'
 }
