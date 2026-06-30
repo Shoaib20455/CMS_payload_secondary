@@ -1446,6 +1446,7 @@
   padding: 0 42px;
   border-radius: 10px;
   background: #012f42;
+  overflow: hidden;
 }
 
 .about-founder-media img {
@@ -3610,4 +3611,28 @@
     border-radius: 0 10px 10px 0;
     object-fit: cover;
   }
+}
+
+/* ── About page image hover effect ── */
+
+.about-hero-image,
+.about-story-portrait,
+.about-story-wide,
+.about-founder-media img,
+.about-values img,
+.about-services-intro img,
+.about-why-layout > img,
+.about-cta > img {
+  transition: transform 0.3s ease;
+}
+
+.about-hero-image:hover,
+.about-story-portrait:hover,
+.about-story-wide:hover,
+.about-founder-media img:hover,
+.about-values img:hover,
+.about-services-intro img:hover,
+.about-why-layout > img:hover,
+.about-cta > img:hover {
+  transform: translateY(-4px) scale(1.02);
 }
