@@ -3,14 +3,14 @@ import { DM_Sans, Outfit, Poppins } from "next/font/google";
 import "./globals.css";
 
 import SiteShell from "./components/SiteShell";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"], display: "swap" });
 const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], display: "swap" });
 const poppins = Poppins({ variable: "--font-poppins", subsets: ["latin"], weight: ["500"], display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
 
   title: {
     default: "Box Truck Dispatch Services for Owner Operators",

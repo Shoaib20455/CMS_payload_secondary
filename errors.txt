@@ -1,0 +1,21 @@
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 42s
+  Running TypeScript ...
+  Finished TypeScript in 7.4s ...
+  Collecting page data using 1 worker ...
+Error: Failed to collect configuration for /service/load-booking
+    at ignore-listed frames {
+  [cause]: TypeError: Invalid URL
+      at module evaluation (src/app/(app)/layout.tsx:13:17)
+      at module evaluation (src/app/(app)/layout.tsx:79:1) {
+    code: 'ERR_INVALID_URL',
+    input: 'undefined'
+  }
+}
+> Build error occurred
+Error: Failed to collect page data for /service/load-booking
+    at ignore-listed frames {
+  type: 'Error'
+}
+Error: Command "npm run build" exited with 1

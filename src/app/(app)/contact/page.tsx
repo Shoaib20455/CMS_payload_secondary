@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const heroImage = "/contact/images/Frame 4 (1).webp";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: "Contact Box Truck Dispatching",
   description:
     "Contact Box Truck Dispatching for dispatch support, load booking, rate negotiation, and a free consultation for your trucking operation.",

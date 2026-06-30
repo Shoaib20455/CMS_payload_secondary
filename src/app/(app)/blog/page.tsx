@@ -4,10 +4,10 @@ import Link from "next/link";
 
 import { getCategories, getPosts } from "@/lib/payload-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: "Box Truck Dispatching Blog",
   description:
     "Guides and dispatch insights for box truck owner-operators and fleets, covering load selection, dispatch support, compliance, and revenue growth.",

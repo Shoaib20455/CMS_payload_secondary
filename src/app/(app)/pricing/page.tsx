@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: "Box Truck Dispatching Pricing",
   description:
     "Transparent box truck dispatching pricing, dispatch fee ranges, and benefits for owner-operators and fleets.",

@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: "Ohio Box Truck Dispatching Services",
   description:
     "Ohio box truck dispatching services for owner-operators and fleets across Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and nearby freight markets.",

@@ -7,8 +7,8 @@ const pageTitle = "About Box Truck Dispatching";
 const pageDescription =
   "Learn how Box Truck Dispatching supports owner-operators and fleet owners with load booking, rate negotiation, paperwork, and nationwide dispatch support.";
 const pagePath = "/about";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
-const pageUrl = `${siteUrl}${pagePath}`;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
+const pageUrl = siteUrl ? `${siteUrl}${pagePath}` : pagePath;
 
 export const metadata: Metadata = {
   title: pageTitle,
