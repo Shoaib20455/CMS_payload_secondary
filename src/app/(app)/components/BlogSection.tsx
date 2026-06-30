@@ -65,54 +65,56 @@ export default function BlogSection({
         </div>
 
         <div className="grid grid-cols-1 gap-[30px] xl:grid-cols-[742px_1fr]">
-          <article className="min-h-[600px] rounded-[10px] border border-[#878B92] bg-white p-[30px]">
-            <Image
-              src={featuredPost.img}
-              alt={featuredPost.title}
-              width={682}
-              height={317}
-              className="mb-5 h-[317px] w-full rounded-[10px] object-cover max-sm:h-[220px]"
-            />
+          <article className="group min-h-[600px] rounded-[10px] border border-[#878B92] bg-white p-[30px]">
+  <div className="mb-5 h-[317px] w-full overflow-hidden rounded-[10px] max-sm:h-[220px]">
+    <Image
+      src={featuredPost.img}
+      alt={featuredPost.title}
+      width={682}
+      height={317}
+      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+  </div>
 
-            <PostDate date={featuredPost.date} />
+  <PostDate date={featuredPost.date} />
 
-            <h3 className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-[33px] text-[#012F42]">
-              {featuredPost.title}
-            </h3>
+  <h3 className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-[33px] text-[#012F42]">
+    {featuredPost.title}
+  </h3>
 
-            <p className="my-5 font-[family-name:var(--font-dm-sans)] text-[18px] font-normal leading-7 text-[#595E68]">
-              {featuredPost.desc}
-            </p>
+  <p className="my-5 font-[family-name:var(--font-dm-sans)] text-[18px] font-normal leading-7 text-[#595E68]">
+    {featuredPost.desc}
+  </p>
 
-            <ReadMore href={featuredPost.href} />
-          </article>
+  <ReadMore href={featuredPost.href} />
+</article>
 
           <div className="grid content-start gap-[30px]">
             {smallPosts.map((post) => (
               <article
-                key={post.title}
-                className="grid min-h-[180px] grid-cols-1 items-center gap-[30px] rounded-[10px] border border-[#878B92] bg-white p-[15px] md:grid-cols-[220px_1fr]"
-              >
-                <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] md:h-[150px] md:w-[220px]">
-                  <Image
-                    src={post.img}
-                    alt={post.title}
-                    fill
-                    sizes="(min-width: 768px) 220px, calc(100vw - 70px)"
-                    className="object-cover"
-                  />
-                </div>
+  key={post.title}
+  className="group grid min-h-[180px] grid-cols-1 items-center gap-[30px] rounded-[10px] border border-[#878B92] bg-white p-[15px] md:grid-cols-[220px_1fr]"
+>
+  <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] md:h-[150px] md:w-[220px]">
+    <Image
+      src={post.img}
+      alt={post.title}
+      fill
+      sizes="(min-width: 768px) 220px, calc(100vw - 70px)"
+      className="object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+  </div>
 
-                <div>
-                  <PostDate date={post.date} />
+  <div>
+    <PostDate date={post.date} />
 
-                  <h3 className="mb-5 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-[29px] text-[#012F42]">
-                    {post.title}
-                  </h3>
+    <h3 className="mb-5 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-[29px] text-[#012F42]">
+      {post.title}
+    </h3>
 
-                  <ReadMore href={post.href} />
-                </div>
-              </article>
+    <ReadMore href={post.href} />
+  </div>
+</article>
             ))}
           </div>
         </div>
@@ -208,7 +210,7 @@ export default function BlogSection({
           </div>
 
           <div className="bb-blog-025">
-            <article className="bb-blog-026">
+            <article className="bb-blog-026 group">
               <Image
                 className="bb-blog-027"
                 src={featuredPost.img}
@@ -241,7 +243,7 @@ export default function BlogSection({
 
             <div className="bb-blog-035">
               {smallPosts.map((post) => (
-                <article key={post.title} className="bb-blog-036">
+                <article key={post.title} className="bb-blog-036 group">
                   <Image
                     className="bb-blog-037"
                     src={post.img}

@@ -166,7 +166,7 @@ export default function ContactPage() {
               {contactCards.map((card) => (
                 <div
                   key={card.label}
-                    className="flex min-h-24 items-center gap-4 rounded-[10px] bg-white/20 p-4 sm:gap-5 sm:p-5"
+                  className="flex min-h-24 items-center gap-4 rounded-[10px] bg-white/20 p-4 sm:gap-5 sm:p-5"
                 >
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center">
                     <Image
@@ -196,44 +196,44 @@ export default function ContactPage() {
             </h2>
 
             <div className="mt-6 flex flex-wrap items-center gap-5 sm:gap-6">
-  {socialLinks.map((item) => (
-    <a
-      key={item.label}
-      href={item.href}
-      className="flex h-11 w-11 items-center justify-center transition-opacity hover:opacity-80"
-      aria-label={`Follow us on ${item.label}`}
-    >
-      {item.label === "Twitter" && item.bgSrc ? (
-        <span className="relative flex h-8 w-8 items-center justify-center">
-          <Image
-            src={item.bgSrc}
-            alt=""
-            fill
-            sizes="32px"
-            className="object-contain"
-            aria-hidden="true"
-          />
+              {socialLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="flex h-11 w-11 items-center justify-center transition-opacity hover:opacity-80"
+                  aria-label={`Follow us on ${item.label}`}
+                >
+                  {item.label === "Twitter" && item.bgSrc ? (
+                    <span className="relative flex h-8 w-8 items-center justify-center">
+                      <Image
+                        src={item.bgSrc}
+                        alt=""
+                        fill
+                        sizes="32px"
+                        className="object-contain"
+                        aria-hidden="true"
+                      />
 
-          <Image
-            src={item.iconSrc}
-            alt={`${item.label} icon`}
-            width={18}
-            height={18}
-            className="relative z-10 h-[18px] w-[18px] object-contain"
-          />
-        </span>
-      ) : (
-        <Image
-          src={item.iconSrc}
-          alt={`${item.label} icon`}
-          width={32}
-          height={32}
-          className="h-8 w-8 object-contain"
-        />
-      )}
-    </a>
-  ))}
-</div>
+                      <Image
+                        src={item.iconSrc}
+                        alt={`${item.label} icon`}
+                        width={18}
+                        height={18}
+                        className="relative z-10 h-[18px] w-[18px] object-contain"
+                      />
+                    </span>
+                  ) : (
+                    <Image
+                      src={item.iconSrc}
+                      alt={`${item.label} icon`}
+                      width={32}
+                      height={32}
+                      className="h-8 w-8 object-contain"
+                    />
+                  )}
+                </a>
+              ))}
+            </div>
           </div>
 
           <div className="mt-[30px] rounded-[10px] border border-[#A3A3A3] bg-white p-5 sm:p-8">
@@ -266,62 +266,62 @@ export default function ContactPage() {
           </p>
 
           <form className="mt-8 grid gap-5 lg:mt-10">
-  <div className="grid gap-5 md:grid-cols-2">
-    <ContactField label="Full Name" placeholder="John Doe" />
+            <div className="grid gap-5 md:grid-cols-2">
+              <ContactField label="Full Name" placeholder="John Doe" />
 
-    <ContactField label="Phone Number" placeholder="(555) 000-0000" />
+              <ContactField label="Phone Number" placeholder="(555) 000-0000" />
 
-    <ContactField
-      label="Email Address"
-      placeholder="name@company.com"
-      type="email"
-    />
+              <ContactField
+                label="Email Address"
+                placeholder="name@company.com"
+                type="email"
+              />
 
-    <ContactField
-      label="Company Name (OPTIONAL)"
-      placeholder="Logistics LLC"
-    />
+              <ContactField
+                label="Company Name (OPTIONAL)"
+                placeholder="Logistics LLC"
+              />
 
-    <ContactField label="MC Number" placeholder="MC# 000000" />
+              <ContactField label="MC Number" placeholder="MC# 000000" />
 
-    <label className="block">
-      <span className="font-[family-name:var(--font-outfit)] text-[16px] font-semibold leading-6 text-[#012F42]">
-        Truck Type
-      </span>
+              <label className="block">
+                <span className="font-[family-name:var(--font-outfit)] text-[16px] font-semibold leading-6 text-[#012F42]">
+                  Truck Type
+                </span>
 
-      <select className="mt-2 h-14 w-full rounded-[5px] border border-[#D4D4D4] bg-[#F8FAFC] px-4 font-[family-name:var(--font-dm-sans)] text-[16px] text-[#5B6472] outline-none transition-colors focus:border-[#FE8F02]">
-        <option>Box Truck</option>
-        <option>Dry Van</option>
-        <option>Flatbed</option>
-        <option>Reefer</option>
-        <option>Power Only</option>
-      </select>
-    </label>
-  </div>
+                <select className="mt-2 h-14 w-full rounded-[5px] border border-[#D4D4D4] bg-[#F8FAFC] px-4 font-[family-name:var(--font-dm-sans)] text-[16px] text-[#5B6472] outline-none transition-colors focus:border-[#FE8F02]">
+                  <option>Box Truck</option>
+                  <option>Dry Van</option>
+                  <option>Flatbed</option>
+                  <option>Reefer</option>
+                  <option>Power Only</option>
+                </select>
+              </label>
+            </div>
 
-  <ContactField
-    label="Preferred Lanes or States"
-    placeholder="e.g. TX, GA, FL, or Midwest Region"
-  />
+            <ContactField
+              label="Preferred Lanes or States"
+              placeholder="e.g. TX, GA, FL, or Midwest Region"
+            />
 
-  <label className="block">
-    <span className="font-[family-name:var(--font-outfit)] text-[16px] font-semibold leading-6 text-[#012F42]">
-      Message
-    </span>
+            <label className="block">
+              <span className="font-[family-name:var(--font-outfit)] text-[16px] font-semibold leading-6 text-[#012F42]">
+                Message
+              </span>
 
-    <textarea
-      className="mt-2 min-h-[132px] w-full resize-y rounded-[5px] border border-[#D4D4D4] bg-[#F8FAFC] px-4 py-4 font-[family-name:var(--font-dm-sans)] text-[16px] text-[#111827] outline-none transition-colors placeholder:text-[#6B7280] focus:border-[#FE8F02]"
-      placeholder="Tell us about your current operation..."
-    />
-  </label>
+              <textarea
+                className="mt-2 min-h-[132px] w-full resize-y rounded-[5px] border border-[#D4D4D4] bg-[#F8FAFC] px-4 py-4 font-[family-name:var(--font-dm-sans)] text-[16px] text-[#111827] outline-none transition-colors placeholder:text-[#6B7280] focus:border-[#FE8F02]"
+                placeholder="Tell us about your current operation..."
+              />
+            </label>
 
-  <button
-    type="submit"
-    className="mt-2 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-8 font-[family-name:var(--font-outfit)] text-[16px] font-medium uppercase tracking-[0.08em] text-white transition-colors hover:bg-[#E07D02]"
-  >
-    Request Free Consultation
-  </button>
-</form>
+            <button
+              type="submit"
+              className="mt-2 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-8 font-[family-name:var(--font-outfit)] text-[16px] font-medium uppercase tracking-[0.08em] text-white transition-colors hover:bg-[#E07D02]"
+            >
+              Request Free Consultation
+            </button>
+          </form>
         </div>
       </section>
 
@@ -351,86 +351,82 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 xl:grid-cols-4">
-  {testimonials.map((testimonial) => (
-    <article
-      key={testimonial.name}
-      className={`group rounded-[10px] border bg-white px-7 py-8 text-center transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#FACC15] hover:shadow-[0_0_0_3px_rgba(250,204,21,0.28),0_18px_40px_rgba(250,204,21,0.18)] ${
-        testimonial.active ? "border-[#FACC15]" : "border-[#A3A3A3]"
-      }`}
-    >
-      <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-[#012F42] transition-transform duration-300 group-hover:scale-105">
-        <Image
-          src={testimonial.avatarSrc}
-          alt={testimonial.avatarAlt}
-          width={96}
-          height={96}
-          className="h-full w-full object-cover"
-        />
-      </div>
+          {testimonials.map((testimonial) => (
+            <article
+  key={testimonial.name}
+  className="group overflow-hidden rounded-[10px] border border-[#111827]/50 bg-white/20 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#FE8F02] hover:bg-white/40 hover:shadow-[0_12px_30px_rgba(254,143,2,0.16)]"
+>
+  <div className="h-2.5 bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
-      <div
-        className={`mx-auto mt-5 h-0.5 w-40 rounded-full transition-colors duration-300 ${
-          testimonial.active
-            ? "bg-[#FACC15]"
-            : "bg-[#A3A3A3] group-hover:bg-[#FACC15]"
-        }`}
+  <div className="px-7 py-8">
+    <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-[#012F42]">
+      <Image
+        src={testimonial.avatarSrc}
+        alt={testimonial.avatarAlt}
+        width={96}
+        height={96}
+        className="h-full w-full object-cover"
       />
+    </div>
 
-      <h3 className="mt-5 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
-        {testimonial.name}
-      </h3>
+    <div className="mx-auto mt-5 h-0.5 w-40 rounded-full bg-[#A3A3A3]" />
 
-      <p className="font-[family-name:var(--font-dm-sans)] text-[14px] font-medium leading-6 text-[#FACC15]">
-        {testimonial.role}
-      </p>
+    <h3 className="mt-5 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
+      {testimonial.name}
+    </h3>
 
-      <div className="mt-6 flex justify-center gap-1 text-[#FACC15]">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <StarIcon key={index} />
-        ))}
-      </div>
+    <p className="font-[family-name:var(--font-dm-sans)] text-[14px] font-medium leading-6 text-[#FE8F02]">
+      {testimonial.role}
+    </p>
 
-      <p className="mt-4 font-[family-name:var(--font-dm-sans)] text-[16px] leading-7 text-[#5B6472] sm:text-[18px]">
-        {testimonial.quote}
-      </p>
-    </article>
-  ))}
-</div>
+    <div className="mt-6 flex justify-center gap-1 text-[#FE8F02]">
+      {Array.from({ length: 5 }).map((_, index) => (
+        <StarIcon key={index} />
+      ))}
+    </div>
+
+    <p className="mt-4 font-[family-name:var(--font-dm-sans)] text-[16px] leading-7 text-[#5B6472] sm:text-[18px]">
+      {testimonial.quote}
+    </p>
+  </div>
+</article>
+          ))}
+        </div>
       </section>
 
       <section className="mx-auto mt-12 w-[calc(100%_-_32px)] max-w-[1520px] rounded-[10px] bg-[#012F42] px-5 py-10 sm:mt-16 sm:w-[calc(100%_-_40px)] sm:px-10 sm:py-12 lg:mt-20 lg:grid lg:min-h-[535px] lg:grid-cols-[1fr_720px] lg:gap-20 lg:px-[100px] lg:py-[50px]">
-  <div className="flex flex-col justify-center">
-    <h2 className="max-w-[462px] font-[family-name:var(--font-outfit)] text-[32px] font-bold leading-[40px] text-white sm:text-[42px] sm:leading-[54px] lg:text-[48px] lg:leading-[60px]">
-      Ready to Grow Your Business?
-    </h2>
+        <div className="flex flex-col justify-center">
+          <h2 className="max-w-[462px] font-[family-name:var(--font-outfit)] text-[32px] font-bold leading-[40px] text-white sm:text-[42px] sm:leading-[54px] lg:text-[48px] lg:leading-[60px]">
+            Ready to Grow Your Business?
+          </h2>
 
-    <p className="mt-6 max-w-[395px] font-[family-name:var(--font-dm-sans)] text-[16px] leading-7 text-white/70 sm:mt-10 sm:text-[18px]">
-      Contact us today and start running high-paying loads!
-    </p>
-  </div>
+          <p className="mt-6 max-w-[395px] font-[family-name:var(--font-dm-sans)] text-[16px] leading-7 text-white/70 sm:mt-10 sm:text-[18px]">
+            Contact us today and start running high-paying loads!
+          </p>
+        </div>
 
-  <form className="mt-10 rounded-[10px] bg-white/10 p-6 lg:mt-0 lg:p-[50px]">
-    <div className="grid gap-5 sm:grid-cols-2">
-      <CtaField label="First Name" placeholder="Enter First Name" />
-      <CtaField label="Last Name" placeholder="Enter Last Name" />
-      <CtaField label="Phone Number" placeholder="+1 (000) 123-1234" />
-      <CtaField label="Email Address" placeholder="email@gmail.com" />
-      <CtaField
-        label="Truck Type"
-        placeholder="Enter Truck Type"
-        select
-      />
-      <CtaField label="MC Number" placeholder="Enter MC Number" />
-    </div>
+        <form className="mt-10 rounded-[10px] bg-white/10 p-6 lg:mt-0 lg:p-[50px]">
+          <div className="grid gap-5 sm:grid-cols-2">
+            <CtaField label="First Name" placeholder="Enter First Name" />
+            <CtaField label="Last Name" placeholder="Enter Last Name" />
+            <CtaField label="Phone Number" placeholder="+1 (000) 123-1234" />
+            <CtaField label="Email Address" placeholder="email@gmail.com" />
+            <CtaField
+              label="Truck Type"
+              placeholder="Enter Truck Type"
+              select
+            />
+            <CtaField label="MC Number" placeholder="Enter MC Number" />
+          </div>
 
-    <button
-      type="submit"
-      className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
-    >
-      Get Started Now
-    </button>
-  </form>
-</section>
+          <button
+            type="submit"
+            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+          >
+            Get Started Now
+          </button>
+        </form>
+      </section>
     </div>
   );
 }
