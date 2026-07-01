@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import type { SVGProps } from "react";
+import { ContactInfoPanel } from "../components/ContactInfoPanel";
 
 const pageTitle = "About Box Truck Dispatching";
 const pageDescription =
@@ -530,99 +531,61 @@ export default function AboutPage() {
 </div>
         </section>
 
-        <section className="about-contact">
-          <div className="about-contact-card">
-            <h2>Contact Information</h2>
-
-            <div className="about-contact-list">
-              {contactItems.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <div className="about-contact-item" key={item.label}>
-                    <Icon aria-hidden="true" />
-                    <div>
-                      <h3>{item.label}</h3>
-                      <p>{item.body}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <h3 className="about-social-title">Connect with me</h3>
-
-            <div className="about-socials" aria-label="Social links">
-              {socialLinks.map((item) => (
-                <Link key={item.label} href={item.href} aria-label={item.label}>
-                  {item.label === "Twitter" && item.bgSrc ? (
-                    <span className="about-twitter-icon">
-                      <Image
-                        src={item.bgSrc}
-                        alt=""
-                        fill
-                        sizes="32px"
-                        aria-hidden="true"
-                      />
-                      <Image
-                        src={item.iconSrc}
-                        alt=""
-                        width={18}
-                        height={18}
-                        aria-hidden="true"
-                      />
-                    </span>
-                  ) : (
-                    <Image
-                      src={item.iconSrc}
-                      alt=""
-                      width={32}
-                      height={32}
-                      aria-hidden="true"
-                    />
-                  )}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <aside className="about-benefits">
-            <h3>Why Work With Us?</h3>
-            <ul>
-              {benefits.map((benefit) => (
-                <li key={benefit}>{benefit}</li>
-              ))}
-            </ul>
-          </aside>
-        </section>
+        <section className="mx-auto mt-12 w-[calc(100%_-_32px)] max-w-[1520px] sm:mt-16 sm:w-[calc(100%_-_40px)] lg:mt-20">
+  <ContactInfoPanel
+    benefitsPosition="right"
+    items={contactItems.map((item) => ({
+      label: item.label,
+      value: item.body,
+      Icon: item.icon,
+    }))}
+    socialLinks={socialLinks}
+    benefits={benefits}
+  />
+</section>
 
         <section className="about-why">
-          <h2>Why Carriers Choose Us</h2>
+  <h2>Why Carriers Choose Us</h2>
 
-          <div className="about-why-layout">
-            <Image
-              src="/about/Rectangle 1093.webp"
-              alt="White box truck parked in a lot"
-              width={750}
-              height={518}
-            />
-            <div className="about-reason-list">
-              {reasons.map((reason, index) => (
-                <details
-                  className="about-reason"
-                  key={reason.title}
-                  open={index === 0}
-                >
-                  <summary>
-                    <h3>{reason.title}</h3>
-                  </summary>
+  <div className="about-why-layout">
+    <Image
+      src="/about/Rectangle 1093.webp"
+      alt="White box truck parked in a lot"
+      width={750}
+      height={518}
+    />
 
-                  <p>{reason.body}</p>
-                </details>
-              ))}
+    <div className="about-reason-list grid gap-5">
+      {reasons.map((reason, index) => (
+        <details
+  key={reason.title}
+  name="carrier-reasons"
+  className="group overflow-hidden rounded-[10px] border border-[rgba(17,24,39,0.15)] bg-white transition-all duration-500 open:border-2 open:border-[#FE8F02] open:shadow-[0_4px_20px_rgba(0,0,0,0.05)]"
+  open={index === 0}
+>
+          <summary className="relative flex min-h-[73px] cursor-pointer list-none items-center pr-16 [&::-webkit-details-marker]:hidden">
+            <h3 className="m-0 px-5 font-[family-name:var(--font-dm-sans)] text-[18px] font-medium leading-[33px] text-[#012F42]">
+              {reason.title}
+            </h3>
+
+            <span className="absolute right-[25px] top-1/2 flex h-4 w-4 -translate-y-1/2 items-center justify-center">
+              <span className="absolute h-[2px] w-4 rounded-[1px] bg-[#012F42]" />
+              <span className="absolute h-[2px] w-4 -rotate-90 rounded-[1px] bg-[#012F42] transition-transform duration-300 group-open:rotate-0" />
+            </span>
+          </summary>
+
+          <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-open:grid-rows-[1fr]">
+            <div className="overflow-hidden">
+              <p className="m-0 px-5 pb-5 font-[family-name:var(--font-dm-sans)] text-[16px] font-normal leading-6 text-[rgba(17,24,39,0.70)]">
+                {reason.body}
+              </p>
             </div>
           </div>
-        </section>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
 
                 <section className="about-cta">
           <div>

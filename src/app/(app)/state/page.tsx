@@ -34,37 +34,51 @@ const states = [
   {
     title: "Ohio",
     description:
-      "Reliable box truck dispatching services across Ohio, helping carriers secure consistent freight and maximise revenue. We manage load booking, route planning, and broker communication so you can stay focused on the road.",
+      "Reliable box truck dispatching across Ohio with load booking, broker communication, route planning, and freight support for owner operators.",
     image: "/state/Rectangle 1100.png",
     featured: true,
     href: "/state/stateDetails",
   },
   {
     title: "Indiana",
+    description:
+      "Indiana dispatch support for box truck carriers needing steady freight, better lanes, broker coordination, and paperwork handling.",
     image: "/state/Rectangle 1117 (6).png",
   },
   {
     title: "Texas",
+    description:
+      "Texas box truck dispatching for local, regional, and long-haul freight with rate negotiation and daily load planning.",
     image: "/state/Rectangle 1117 (4).png",
   },
   {
     title: "Florida",
+    description:
+      "Florida dispatch services helping carriers find quality loads, reduce downtime, and keep trucks moving across busy freight markets.",
     image: "/state/Rectangle 1117 (2).png",
   },
   {
     title: "New York",
+    description:
+      "New York box truck dispatching with broker support, route coordination, load sourcing, and paperwork management for carriers.",
     image: "/state/Rectangle 1117 (5).png",
   },
   {
     title: "California",
+    description:
+      "California dispatch support for box truck carriers working competitive lanes, time-sensitive freight, and high-demand delivery markets.",
     image: "/state/Rectangle 1117 (3).png",
   },
   {
     title: "Kentucky",
+    description:
+      "Kentucky dispatching services focused on consistent freight, profitable lanes, broker communication, and organized load paperwork.",
     image: "/state/Rectangle 1117 (1).png",
   },
   {
     title: "Illinois",
+    description:
+      "Illinois box truck dispatching for carriers needing stronger load access, rate support, and reliable dispatch management.",
     image: "/state/Rectangle 1117.png",
   },
 ];
@@ -120,22 +134,22 @@ export default function StatePage() {
                 <div className="absolute bottom-0 left-0 h-2.5 w-full bg-[#012F42] transition-colors duration-300 group-hover:bg-[#FE8F02]" />
 
                 <div className="absolute inset-x-5 bottom-8">
-                  {state.description && (
-                    <p className="mb-[92px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-[25px] text-white">
-                      {state.description}
-                    </p>
-                  )}
+  {state.description && (
+    <p className="mb-6 translate-y-8 opacity-0 font-[family-name:var(--font-dm-sans)] text-[16px] leading-[24px] text-white transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+      {state.description}
+    </p>
+  )}
 
-                  <div className="flex items-center justify-between gap-4">
-                    <h3 className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-8 text-white">
-                      {state.title}
-                    </h3>
+  <div className="flex items-center justify-between gap-4">
+    <h3 className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-8 text-white">
+      {state.title}
+    </h3>
 
-                    <span className="flex h-6 w-8 shrink-0 items-center justify-center rounded-[2px] bg-[#FE8F02] transition-colors duration-300 group-hover:bg-white/30">
-                      <ArrowIcon />
-                    </span>
-                  </div>
-                </div>
+    <span className="flex h-6 w-8 shrink-0 items-center justify-center rounded-[2px] bg-[#FE8F02] transition-colors duration-300 group-hover:bg-white/30">
+      <ArrowIcon />
+    </span>
+  </div>
+</div>
               </>
             )
 
@@ -184,7 +198,7 @@ export default function StatePage() {
 
           <button
             type="submit"
-            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 cursor-pointer"
           >
             Get Started Now
           </button>

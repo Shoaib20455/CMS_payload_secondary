@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { TestimonialsSection } from "../components/LandingPageSections";
+import { ContactInfoPanel } from "../components/ContactInfoPanel";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const heroImage = "/contact/images/Frame 4 (1).webp";
@@ -89,7 +90,7 @@ const benefits = [
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#F8FAFC] pt-5 pb-20 sm:pt-8 lg:pt-20">
+    <div className="bg-[#F8FAFC] pb-20 pt-5 sm:pt-8 lg:pt-20">
       <section className="mx-auto w-[calc(100%_-_32px)] max-w-[1520px] overflow-hidden rounded-[12px] sm:w-[calc(100%_-_40px)] sm:rounded-[20px]">
         <div className="relative min-h-[360px] overflow-hidden px-5 py-12 sm:min-h-[420px] sm:px-10 sm:py-16 lg:min-h-[500px] lg:px-[100px] lg:py-[137px]">
           <Image
@@ -121,104 +122,11 @@ export default function ContactPage() {
       </section>
 
       <section className="mx-auto mt-12 grid w-[calc(100%_-_32px)] max-w-[1520px] gap-8 sm:mt-16 sm:w-[calc(100%_-_40px)] sm:gap-10 lg:mt-20 lg:grid-cols-[626px_1fr] lg:items-start lg:gap-[176px]">
-        <div>
-          <div className="rounded-[10px] bg-[#012F42] px-5 pb-7 pt-8 sm:px-10 sm:pt-12 sm:pb-8 lg:px-[50px] lg:pt-[32px] lg:pb-[38px]">
-            <h2 className="font-[family-name:var(--font-outfit)] text-[26px] font-semibold leading-9 text-white sm:text-[30px] sm:leading-10">
-              Contact Information
-            </h2>
-
-            <div className="mt-8 grid gap-6 lg:mt-10">
-              {contactCards.map((card) => (
-                <div
-                  key={card.label}
-                  className="flex min-h-24 items-center gap-4 rounded-[10px] bg-white/20 p-4 sm:gap-5 sm:p-5"
-                >
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center">
-                    <Image
-                      src={card.iconSrc}
-                      alt={card.iconAlt}
-                      width={42}
-                      height={42}
-                      className="h-10 w-10 object-contain"
-                    />
-                  </span>
-
-                  <div>
-                    <h3 className="font-[family-name:var(--font-outfit)] text-[18px] font-semibold leading-7 text-white sm:text-[20px] sm:leading-8">
-                      {card.label}
-                    </h3>
-
-                    <p className="mt-1 break-words font-[family-name:var(--font-dm-sans)] text-[15px] leading-6 text-white sm:text-[18px] sm:leading-7">
-                      {card.value}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <h2 className="mt-10 font-[family-name:var(--font-outfit)] text-[26px] font-semibold leading-9 text-white sm:mt-12 sm:text-[30px] sm:leading-10 lg:mt-[74px]">
-              Connect with me
-            </h2>
-
-            <div className="mt-6 flex flex-wrap items-center gap-5 sm:gap-6">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="flex h-11 w-11 items-center justify-center transition-opacity hover:opacity-80"
-                  aria-label={`Follow us on ${item.label}`}
-                >
-                  {item.label === "Twitter" && item.bgSrc ? (
-                    <span className="relative flex h-8 w-8 items-center justify-center">
-                      <Image
-                        src={item.bgSrc}
-                        alt=""
-                        fill
-                        sizes="32px"
-                        className="object-contain"
-                        aria-hidden="true"
-                      />
-
-                      <Image
-                        src={item.iconSrc}
-                        alt={`${item.label} icon`}
-                        width={18}
-                        height={18}
-                        className="relative z-10 h-[18px] w-[18px] object-contain"
-                      />
-                    </span>
-                  ) : (
-                    <Image
-                      src={item.iconSrc}
-                      alt={`${item.label} icon`}
-                      width={32}
-                      height={32}
-                      className="h-8 w-8 object-contain"
-                    />
-                  )}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-[30px] rounded-[10px] border border-[#A3A3A3] bg-white p-5 sm:p-8">
-            <h2 className="font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
-              Why Work With Us?
-            </h2>
-
-            <ul className="mt-6 grid gap-4">
-              {benefits.map((benefit) => (
-                <li
-                  key={benefit}
-                  className="flex items-center gap-3 font-[family-name:var(--font-dm-sans)] text-[16px] leading-6 text-[#5B6472]"
-                >
-                  <CheckIcon />
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <ContactInfoPanel
+          items={contactCards}
+          socialLinks={socialLinks}
+          benefits={benefits}
+        />
 
         <div className="rounded-[10px] border border-[#A3A3A3] bg-white/60 p-5 sm:p-10 lg:p-[50px]">
           <h2 className="font-[family-name:var(--font-outfit)] text-[32px] font-bold leading-[40px] text-[#012F42] sm:text-[40px] sm:leading-[50px] lg:text-[48px] lg:leading-[58px]">
@@ -282,7 +190,7 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="mt-2 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-8 font-[family-name:var(--font-outfit)] text-[16px] font-medium uppercase tracking-[0.08em] text-white transition-colors hover:bg-[#E07D02]"
+              className="mt-2 flex h-12 w-full cursor-pointer items-center justify-center rounded-[5px] bg-[#FE8F02] px-8 font-[family-name:var(--font-outfit)] text-[16px] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95"
             >
               Request Free Consultation
             </button>
@@ -319,7 +227,7 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+            className="mt-6 flex h-12 w-full cursor-pointer items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95"
           >
             Get Started Now
           </button>
@@ -380,6 +288,7 @@ function CtaField({
               </option>
               <option value="box-truck">Box Truck</option>
             </select>
+
             <Image
               src="/contact/images/downArrow.png"
               alt=""
@@ -396,22 +305,5 @@ function CtaField({
         )}
       </span>
     </label>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg
-      className="h-5 w-5 shrink-0 text-[#FE8F02]"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="m5 12 5 5L20 7" />
-    </svg>
   );
 }

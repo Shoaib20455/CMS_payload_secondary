@@ -41,30 +41,44 @@ const services = [
   },
   {
     title: "Dedicated Truck Dispatcher",
+    description:
+      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/call-center.webp",
   },
   {
     title: "Factoring",
+    description:
+      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/Rectangle 1117@2x (3).webp",
   },
   {
     title: "Paper Work",
+    description:
+      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/Rectangle 1117@2x (1).webp",
   },
   {
     title: "Driver Hiring",
+    description:
+      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/Rectangle 1117@2x (5).webp",
   },
   {
     title: "MC Setup",
+    description:
+      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/Rectangle 1117@2x (2).webp",
   },
   {
     title: "Accounting",
+    description:
+      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/Rectangle 1117@2x.webp",
   },
   {
     title: "Lease On",
+    description:
+      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
     image: "/Images/Rectangle 1117@2x (6).webp",
   },
 ];
@@ -121,7 +135,7 @@ export default function ServiceDetailPage() {
 
                 <div className="absolute inset-x-5 bottom-8">
                   {service.description && (
-                    <p className="mb-[92px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-[25px] text-white">
+                    <p className="mb-6 translate-y-8 opacity-0 font-[family-name:var(--font-dm-sans)] text-[18px] leading-[25px] text-white transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
                       {service.description}
                     </p>
                   )}
@@ -137,7 +151,7 @@ export default function ServiceDetailPage() {
                   </div>
                 </div>
               </>
-            )
+            );
 
             return service.href ? (
               <Link
@@ -154,7 +168,7 @@ export default function ServiceDetailPage() {
               >
                 {content}
               </article>
-            )
+            );
           })}
         </div>
       </section>
@@ -166,8 +180,8 @@ export default function ServiceDetailPage() {
           </h2>
 
           <p className="mt-10 max-w-[395px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-7 text-white/70">
-            Fill out the form to connect with our expert dispatch team and
-            start getting high-paying loads with full support and zero stress.
+            Fill out the form to connect with our expert dispatch team and start
+            getting high-paying loads with full support and zero stress.
           </p>
         </div>
 
@@ -183,13 +197,12 @@ export default function ServiceDetailPage() {
 
           <button
             type="submit"
-            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+            className="mt-6 flex h-12 w-full items-center  justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 cursor-pointer"
           >
             Get Started Now
           </button>
         </form>
       </section>
-
     </div>
   );
 }

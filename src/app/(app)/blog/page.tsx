@@ -180,12 +180,12 @@ export default async function BlogPage() {
           Our Learning Resources
         </h2>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <div className="mt-8 flex flex-wrap justify-center gap-4 ">
           {categories.map((category) => (
             <Link
               key={category}
               href="#resources"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium text-white no-underline transition-colors hover:bg-[#E07D02]"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium text-white no-underline duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95"
             >
               {category}
             </Link>
@@ -279,7 +279,7 @@ export default async function BlogPage() {
 
           <button
             type="submit"
-            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-colors hover:bg-[#E07D02]"
+            className="mt-6 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 cursor-pointer"
           >
             Get Started Now
           </button>

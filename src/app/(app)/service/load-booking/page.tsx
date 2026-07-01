@@ -177,7 +177,7 @@ export default function LoadBookingPage() {
             What Is Load Booking?
           </h2>
 
-          <div className="mt-8 space-y-7 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#575D67]">
+          <div className="mt-8 mb-8 space-y-7 font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#575D67]">
             <p>
               Load booking is much more than simply finding freight. It requires
               continuous monitoring of load boards, evaluating available
@@ -304,28 +304,32 @@ export default function LoadBookingPage() {
             className="h-auto w-full rounded-[10px] object-cover lg:h-[518px]"
           />
 
-          <div className="space-y-3">
-            {processSteps.map((step, index) => (
-              <details
-                key={step.title}
-                className="group min-h-[80px] rounded-[10px] border border-[#111827]/50 bg-white p-5 transition-[border-color,box-shadow] duration-200 [&[open]]:min-h-[146px] [&[open]]:border-[#FE8F02] [&[open]]:shadow-[0_8px_22px_rgba(254,143,2,0.14)]"
-                open={index === 0}
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[5px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]">
-                  <span className="font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-8 text-[#012F42]">
-                    <span className="text-[#FE8F02]">Step {index + 1}:</span>{" "}
-                    {step.title}
-                  </span>
+          <div className="space-y-5">
+  {processSteps.map((step, index) => (
+    <details
+      key={step.title}
+      name="process-steps"
+      className="group relative h-[73px] cursor-pointer overflow-hidden rounded-[10px] border border-[rgba(17,24,39,0.15)] bg-white transition-all duration-500 open:h-[146px] open:border-2 open:border-[#FE8F02] open:shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+      open={index === 0}
+    >
+      <summary className="list-none [&::-webkit-details-marker]:hidden">
+        <h3 className="absolute left-5 top-5 m-0 w-[calc(100%_-_90px)] font-[family-name:var(--font-outfit)] text-[22px] font-semibold leading-[33px] text-[#012F42]">
+          <span className="text-[#FE8F02]">Step {index + 1}:</span>{" "}
+          {step.title}
+        </h3>
 
-                  <PlusIcon />
-                </summary>
+        <div className="absolute right-[25px] top-[28px] flex h-4 w-4 items-center justify-center">
+          <div className="absolute h-[2px] w-4 rounded-[1px] bg-[#012F42]" />
+          <div className="absolute h-[2px] w-4 -rotate-90 rounded-[1px] bg-[#012F42] transition-transform duration-300 group-open:rotate-0" />
+        </div>
+      </summary>
 
-                <p className="mt-4 max-w-[520px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-6 text-[#111827]/70">
-                  {step.body}
-                </p>
-              </details>
-            ))}
-          </div>
+      <p className="absolute left-5 top-[68px] m-0 max-w-[520px] opacity-0 transition-opacity delay-150 duration-300 group-open:opacity-100 font-[family-name:var(--font-dm-sans)] text-[18px] font-normal leading-[26px] text-[rgba(17,24,39,0.70)]">
+        {step.body}
+      </p>
+    </details>
+  ))}
+</div>
         </div>
       </section>
 
@@ -380,7 +384,7 @@ export default function LoadBookingPage() {
 
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#FE8F02] hover:text-white active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03]  active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]"
             >
               Get a Free Consultation
             </Link>
@@ -401,24 +405,30 @@ export default function LoadBookingPage() {
           Frequently Asked Questions
         </h2>
 
-        <div className="mt-[70px] grid gap-3 lg:grid-cols-2">
-          {faqs.map((question, index) => (
-            <details
-              key={`${question}-${index}`}
-              className="group min-h-[80px] rounded-[10px] border border-[#111827]/50 bg-white px-5 py-4 transition-[border-color,box-shadow] duration-200 [&[open]]:border-[#FE8F02] [&[open]]:shadow-[0_8px_22px_rgba(254,143,2,0.14)]"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[5px] font-[family-name:var(--font-dm-sans)] text-[18px] leading-8 text-[#012F42] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FE8F02]">
-                {question}
-                <PlusIcon />
-              </summary>
+        <div className="mt-[70px] grid gap-5 lg:grid-cols-2">
+  {faqs.map((question, index) => (
+    <details
+      key={`${question}-${index}`}
+      className="group relative h-[73px] cursor-pointer overflow-hidden rounded-[10px] border border-[rgba(17,24,39,0.15)] bg-white transition-all duration-500 open:h-[146px] open:border-2 open:border-[#FE8F02] open:shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+    >
+      <summary className="list-none [&::-webkit-details-marker]:hidden">
+        <h3 className="absolute left-5 top-5 m-0 w-[calc(100%_-_90px)] font-[family-name:var(--font-dm-sans)] text-[18px] font-medium leading-[33px] text-[#012F42]">
+          {question}
+        </h3>
 
-              <p className="mt-3 font-[family-name:var(--font-dm-sans)] text-[16px] leading-6 text-[#111827]/70">
-                Our dispatch team reviews your truck, lanes, schedule, and
-                market conditions to recommend the best available option.
-              </p>
-            </details>
-          ))}
+        <div className="absolute right-[25px] top-[28px] flex h-4 w-4 items-center justify-center">
+          <div className="absolute h-[2px] w-4 rounded-[1px] bg-[#012F42]" />
+          <div className="absolute h-[2px] w-4 -rotate-90 rounded-[1px] bg-[#012F42] transition-transform duration-300 group-open:rotate-0" />
         </div>
+      </summary>
+
+      <p className="absolute left-5 top-[68px] m-0 max-w-[620px] opacity-0 transition-opacity delay-150 duration-300 group-open:opacity-100 font-[family-name:var(--font-dm-sans)] text-[16px] font-normal leading-[24px] text-[rgba(17,24,39,0.70)]">
+        Our dispatch team reviews your truck, lanes, schedule, and market
+        conditions to recommend the best available option.
+      </p>
+    </details>
+  ))}
+</div>
       </section>
 
       <section className="mx-auto mt-3 flex min-h-[256px] w-[calc(100%_-_40px)] max-w-[1520px] flex-col items-center justify-center rounded-[10px] bg-[#012F42] px-6 py-[30px] text-center sm:px-10">

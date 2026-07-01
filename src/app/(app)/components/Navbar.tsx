@@ -9,10 +9,10 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Service", href: "/service" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
   { label: "State", href: "/state" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Contact", href: "/contact" },
+  { label: "Blog", href: "/blog" },
 ];
 
 function isNavItemActive(pathname: string, href: string) {
