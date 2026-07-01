@@ -153,7 +153,7 @@ export default function TestimonialsSection() {
                 />
               </div>
 
-              <div className="mx-auto mt-5 h-0.5 w-40 rounded-full bg-[#A3A3A3]" />
+              <div className="mx-auto mt-5 h-0.5 w-40 rounded-full bg-[#A3A3A3] transition-all duration-300 group-hover:bg-[#FE8F02] group-hover:shadow-[0_0_12px_rgba(254,143,2,0.85)]" />
 
               <h3 className="mt-5 font-[family-name:var(--font-outfit)] text-[20px] font-semibold leading-8 text-[#012F42]">
                 {testimonial.name}

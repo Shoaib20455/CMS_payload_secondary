@@ -65,14 +65,14 @@ export default function BlogSection({
         </div>
 
         <div className="grid grid-cols-1 gap-[30px] xl:grid-cols-[742px_1fr]">
-          <article className="group min-h-[600px] rounded-[10px] border border-[#878B92] bg-white p-[30px]">
+          <article className="min-h-[600px] rounded-[10px] border border-[#878B92] bg-white p-[30px] transition-transform duration-300 hover:scale-[1.02]">
   <div className="mb-5 h-[317px] w-full overflow-hidden rounded-[10px] max-sm:h-[220px]">
     <Image
       src={featuredPost.img}
       alt={featuredPost.title}
       width={682}
       height={317}
-      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      className="h-full w-full object-cover"
     />
   </div>
 
@@ -93,7 +93,7 @@ export default function BlogSection({
             {smallPosts.map((post) => (
               <article
   key={post.title}
-  className="group grid min-h-[180px] grid-cols-1 items-center gap-[30px] rounded-[10px] border border-[#878B92] bg-white p-[15px] md:grid-cols-[220px_1fr]"
+  className="grid min-h-[180px] grid-cols-1 items-center gap-[30px] rounded-[10px] border border-[#878B92] bg-white p-[15px] transition-transform duration-300 hover:scale-[1.02] md:grid-cols-[220px_1fr]"
 >
   <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] md:h-[150px] md:w-[220px]">
     <Image
@@ -101,7 +101,7 @@ export default function BlogSection({
       alt={post.title}
       fill
       sizes="(min-width: 768px) 220px, calc(100vw - 70px)"
-      className="object-cover transition-transform duration-500 group-hover:scale-105"
+      className="object-cover"
     />
   </div>
 
@@ -129,6 +129,7 @@ export default function BlogSection({
 
         <button className="bb-blog-003">View All Blogs</button>
 
+        <article className="bb-blog-featured-card">
         <div className="bb-blog-004" />
 
         <Image
@@ -165,6 +166,7 @@ export default function BlogSection({
         </Link>
 
         <div className="bb-blog-012" />
+        </article>
 
         {smallPosts.map((post, idx) => (
           <div
@@ -210,7 +212,7 @@ export default function BlogSection({
           </div>
 
           <div className="bb-blog-025">
-            <article className="bb-blog-026 group">
+            <article className="bb-blog-026">
               <Image
                 className="bb-blog-027"
                 src={featuredPost.img}
@@ -243,7 +245,7 @@ export default function BlogSection({
 
             <div className="bb-blog-035">
               {smallPosts.map((post) => (
-                <article key={post.title} className="bb-blog-036 group">
+                <article key={post.title} className="bb-blog-036">
                   <Image
                     className="bb-blog-037"
                     src={post.img}
