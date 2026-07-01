@@ -158,12 +158,12 @@ const industries = [
 
 const states = [
   { image: "/about/ohio.png", name: "Ohio" },
-  { image: "/about/Indiana.png", name: "Indiana" },
+  { image: "/about/indiana.png", name: "Indiana" },
   { image: "/about/texas.png", name: "Texas" },
   { image: "/about/florida.webp", name: "Florida" },
   { image: "/about/new_york.webp", name: "New York" },
   { image: "/about/california.webp", name: "California" },
-  { image: "/about/Kentucky.png", name: "Kentucky" },
+  { image: "/about/kentucky.png", name: "Kentucky" },
   { image: "/about/illinois.webp", name: "Illinois" },
 ];
 
