@@ -119,7 +119,7 @@ function FlowFooter() {
         <div>
           <h3 className="bb-footer-027">Location</h3>
 
-          <div className="mt-4 overflow-hidden rounded-[0.75rem] border border-[#FE8F02]/40 bg-[#003951]">
+          <div className="mt-4 w-full max-w-[32rem] overflow-hidden rounded-[0.75rem] border border-[#FE8F02]/40 bg-[#003951] lg:max-w-none">
                 <iframe
                   title="Box Truck Dispatching Location"
                   src={locationEmbedUrl}

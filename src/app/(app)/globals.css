@@ -294,7 +294,7 @@
   @apply relative z-[30] w-full overflow-hidden bg-[#012F42] px-5 py-10 sm:px-8 sm:py-12 lg:px-12;
 }
 .bb-footer-022 {
-  @apply mx-auto grid w-full max-w-[90rem] gap-8 sm:grid-cols-2 min-[70rem]:grid-cols-[1.35fr_0.7fr_1fr_1fr] min-[70rem]:gap-10;
+  @apply mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-8 lg:grid-cols-[1.35fr_0.7fr_1fr_1fr] lg:gap-10;
 }
 .bb-footer-023 {
   @apply h-[5rem] w-[6.8125rem];
