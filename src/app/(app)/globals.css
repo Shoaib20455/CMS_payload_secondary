@@ -186,42 +186,67 @@
 .bb-cta-009 {
   @apply mt-6 h-[3.125rem] w-full cursor-pointer rounded-[0.3125rem] border-none bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[1.0625rem] font-medium text-white capitalize transition-all duration-300 hover:bg-[#E07D02] active:scale-95 sm:w-[9.6875rem];
 }
+
+.bb-faq-single {
+  @apply relative z-[28] w-full overflow-hidden bg-[#F8FAFC] px-5 py-10 sm:px-8 sm:py-12 lg:static lg:z-auto lg:block lg:w-auto lg:overflow-visible lg:bg-transparent lg:p-0;
+}
+
+.bb-faq-inner {
+  @apply mx-auto max-w-[58rem] lg:contents;
+}
+
+.bb-faq-list {
+  @apply mt-7 grid gap-3 min-[860px]:grid-cols-2 lg:contents lg:mt-0;
+}
+
 .bb-faq-001 {
-  @apply absolute;
+  @apply relative lg:absolute;
 }
+
 .bb-faq-002 {
-  @apply w-[46.875rem] cursor-pointer overflow-hidden rounded-[0.625rem] bg-white transition-all duration-500;
+  @apply w-full cursor-pointer overflow-hidden rounded-[0.625rem] bg-white text-left transition-all duration-500 lg:w-[46.875rem];
 }
+
 .bb-faq-003 {
-  @apply h-[11.25rem] border-[0.125rem] border-solid border-[#FE8F02] shadow-[0_0.25rem_1.25rem_rgba(0,0,0,0.05)];
+  @apply border-[0.125rem] border-solid border-[#FE8F02] shadow-[0_0.25rem_1.25rem_rgba(0,0,0,0.05)] lg:h-[11.25rem];
 }
+
 .bb-faq-004 {
-  @apply h-[4.5625rem] border border-solid border-[rgba(17,24,39,0.15)];
+  @apply border border-solid border-[rgba(17,24,39,0.15)] lg:h-[4.5625rem];
 }
+
 .bb-faq-005 {
-  @apply absolute left-[1.25rem] top-[1.25rem] w-[37.5rem] font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[2.0625rem] text-[#012F42];
+  @apply static m-0 flex min-h-[4rem] items-center px-4 py-3 pr-12 font-[family-name:var(--font-dm-sans)] text-[1rem] font-medium leading-[1.45rem] text-[#012F42] sm:text-[1.0625rem] lg:absolute lg:left-[1.25rem] lg:top-[1.25rem] lg:block lg:min-h-0 lg:w-[37.5rem] lg:p-0 lg:pr-0 lg:text-[1.125rem] lg:leading-[2.0625rem];
 }
+
 .bb-faq-006 {
-  @apply absolute left-[1.25rem] top-[4.25rem] w-[44.375rem] font-[family-name:var(--font-dm-sans)] text-[1rem] font-normal leading-[1.5rem] text-[rgba(17,24,39,0.70)];
+  @apply static px-4 pb-4 font-[family-name:var(--font-dm-sans)] text-[0.95rem] font-normal leading-[1.55rem] text-[rgba(17,24,39,0.70)] lg:absolute lg:left-[1.25rem] lg:top-[4.25rem] lg:w-[44.375rem] lg:p-0 lg:text-[1rem] lg:leading-[1.5rem];
 }
+
 .bb-faq-007 {
-  @apply absolute right-[1.5625rem] top-[1.75rem] flex h-[1rem] w-[1rem] items-center justify-center;
+  @apply absolute right-4 top-[1.5rem] flex h-[1rem] w-[1rem] items-center justify-center lg:right-[1.5625rem] lg:top-[1.75rem];
 }
+
 .bb-faq-008 {
   @apply absolute h-[0.125rem] w-[1rem] rounded-[0.0625rem] bg-[#012F42];
 }
+
 .bb-faq-009 {
   @apply absolute h-[0.125rem] w-[1rem] rounded-[0.0625rem] bg-[#012F42] transition-transform duration-300;
 }
+
 .bb-faq-010 {
   @apply rotate-0;
 }
+
 .bb-faq-011 {
   @apply -rotate-90;
 }
+
 .bb-faq-012 {
-  @apply absolute left-[35.5625rem] top-[498.4375rem] w-[48.8125rem] text-center font-[family-name:var(--font-outfit)] text-[3rem] font-bold text-[#012F42];
+  @apply static m-0 text-center font-[family-name:var(--font-outfit)] text-[2rem] font-bold leading-[2.45rem] text-[#012F42] sm:text-[2.25rem] sm:leading-[2.75rem] lg:absolute lg:left-[35.5625rem] lg:top-[498.4375rem] lg:w-[48.8125rem] lg:text-[3rem] lg:leading-normal;
 }
+
 .bb-faq-013 {
   @apply relative z-[28] w-full overflow-hidden bg-[#F8FAFC] px-5 py-10 sm:px-8 sm:py-12 lg:hidden;
 }
@@ -1175,32 +1200,41 @@
   @apply top-[547.1875rem];
 }
 .bb-dynamic-012 {
-  @apply top-[505.9375rem];
+  @apply top-auto lg:top-[505.9375rem];
 }
+
 .bb-dynamic-013 {
-  @apply top-[511.75rem];
+  @apply top-auto lg:top-[511.75rem];
 }
+
 .bb-dynamic-014 {
-  @apply top-[517.5625rem];
+  @apply top-auto lg:top-[517.5625rem];
 }
+
 .bb-dynamic-015 {
-  @apply top-[518.4375rem];
+  @apply top-auto lg:top-[518.4375rem];
 }
+
 .bb-dynamic-016 {
-  @apply top-[523.375rem];
+  @apply top-auto lg:top-[523.375rem];
 }
+
 .bb-dynamic-017 {
-  @apply top-[524.25rem];
+  @apply top-auto lg:top-[524.25rem];
 }
+
 .bb-dynamic-018 {
-  @apply top-[530.0625rem];
+  @apply top-auto lg:top-[530.0625rem];
 }
+
 .bb-dynamic-019 {
-  @apply left-[12.5rem];
+  @apply left-auto lg:left-[12.5rem];
 }
+
 .bb-dynamic-020 {
-  @apply left-[60.625rem];
+  @apply left-auto lg:left-[60.625rem];
 }
+
 .bb-dynamic-021 {
   @apply top-[550.5rem];
 }

@@ -3,7 +3,28 @@ import { DM_Sans, Outfit, Poppins } from "next/font/google";
 import "./globals.css";
 
 import SiteShell from "./components/SiteShell";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+function getSiteUrl(): string | undefined {
+  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+  if (configuredUrl && !configuredUrl.includes("example.com")) {
+    return configuredUrl;
+  }
+
+  const productionDomain = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (productionDomain) {
+    return `https://${productionDomain}`;
+  }
+
+  const deploymentDomain = process.env.VERCEL_URL;
+  if (deploymentDomain) {
+    return `https://${deploymentDomain}`;
+  }
+
+  return undefined;
+}
+
+const siteUrl = getSiteUrl();
 
 const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"], display: "swap" });
 const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], display: "swap" });
