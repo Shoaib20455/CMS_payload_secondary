@@ -4,7 +4,15 @@ import Link from "next/link";
 export default function Footer() {
   return <FlowFooter />;
 }
-
+const serviceLinks = [
+  { label: "Load Booking", href: "/service/load-booking" },
+  {
+    label: "Dedicated Truck Dispatcher",
+    href: "/service/dedicated-truck-dispatcher",
+  },
+  { label: "Factoring", href: "/service/factoring" },
+  { label: "Lease On", href: "/service/lease-on" },
+];
 function FlowFooter() {
   return (
     <>
@@ -101,17 +109,23 @@ function FlowFooter() {
           </div>
 
           <div className="absolute left-[46.5rem] top-[6.25rem] flex flex-col gap-[0.9375rem]">
-            {["Home", "About", "Service", "States", "Blog", "Contact"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="cursor-pointer font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
-                >
-                  {item}
-                </Link>
-              ),
-            )}
+            {[
+              "Home",
+              "About",
+              "Service",
+              "State",
+              "Pricing",
+              "Contact",
+              "Blog",
+            ].map((item) => (
+              <Link
+                key={item}
+                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                className="cursor-pointer font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
+              >
+                {item}
+              </Link>
+            ))}
           </div>
 
           <div className="absolute left-[65.0625rem] top-[3.125rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02]">
@@ -119,24 +133,24 @@ function FlowFooter() {
           </div>
 
           <div className="absolute left-[65.0625rem] top-[6.25rem] flex flex-col gap-[0.9375rem]">
-            {[
-              "Load Booking",
-              "Dedicated Truck Dispatcher",
-              "Factoring",
-              "Paper Work",
-              "Driver Hiring",
-              "MC Setup",
-              "Accounting",
-              "Lease On",
-            ].map((item) => (
-              <Link
-                key={item}
-                href="/service"
-                className="cursor-pointer font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
-              >
-                {item}
-              </Link>
-            ))}
+            {serviceLinks
+              .filter((item) =>
+                [
+                  "Load Booking",
+                  "Dedicated Truck Dispatcher",
+                  "Factoring",
+                  "Lease On",
+                ].includes(item.label),
+              )
+              .map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="cursor-pointer font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-medium leading-[1.25rem] text-white no-underline transition-colors duration-200 hover:text-[#FE8F02]"
+                >
+                  {item.label}
+                </Link>
+              ))}
           </div>
 
           <div className="absolute left-[92.6875rem] top-[3.125rem] font-[family-name:var(--font-outfit)] text-[1.375rem] font-semibold leading-[1.875rem] text-[#FE8F02]">
@@ -273,18 +287,13 @@ function FlowFooter() {
             <h3 className="bb-footer-027">Our Services</h3>
 
             <div className="bb-footer-028">
-              {[
-                "Load Booking",
-                "Dedicated Truck Dispatcher",
-                "Factoring",
-                "Paper Work",
-                "Driver Hiring",
-                "MC Setup",
-                "Accounting",
-                "Lease On",
-              ].map((item) => (
-                <Link key={item} href="/service" className="bb-footer-029">
-                  {item}
+              {serviceLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="bb-footer-029"
+                >
+                  {item.label}
                 </Link>
               ))}
             </div>
@@ -332,5 +341,3 @@ function FlowFooter() {
     </>
   );
 }
-
-
