@@ -135,7 +135,7 @@ export default function TestimonialsSection() {
 
       <div
         ref={cardsRef}
-        className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 xl:grid-cols-4"
+        className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4"
       >
         {orderedTestimonials.map((testimonial) => (
           <article

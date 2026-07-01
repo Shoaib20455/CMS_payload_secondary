@@ -8,7 +8,7 @@ export default function Footer() {
 function FlowFooter() {
   return (
     <>
-      <footer className="relative z-[30] mt-5 hidden h-[31.3125rem] w-full overflow-hidden bg-[#012F42] text-white lg:block">
+      <footer className="relative z-[30] mt-5 hidden h-[31.3125rem] w-full overflow-hidden bg-[#012F42] text-white min-[120rem]:block">
         <div className="relative mx-auto h-[31.3125rem] w-[120rem]">
           <Image
             className="absolute left-[15rem] top-[3.125rem] h-[5rem] w-[6.8125rem]"

@@ -291,10 +291,10 @@
   @apply cursor-pointer font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-normal leading-[1.5625rem] text-white transition-colors duration-200 hover:text-[#FE8F02];
 }
 .bb-footer-021 {
-  @apply relative z-[30] w-full overflow-hidden bg-[#012F42] px-5 py-10 sm:px-8 sm:py-12 lg:hidden;
+  @apply relative z-[30] w-full overflow-hidden bg-[#012F42] px-5 py-10 sm:px-8 sm:py-12 lg:px-12 min-[120rem]:hidden;
 }
 .bb-footer-022 {
-  @apply mx-auto grid max-w-[58rem] gap-8 sm:grid-cols-2 min-[860px]:grid-cols-[1.2fr_0.8fr_1fr_1fr];
+  @apply mx-auto grid w-full max-w-[90rem] gap-8 sm:grid-cols-2 min-[70rem]:grid-cols-[1.35fr_0.7fr_1fr_1fr] min-[70rem]:gap-10;
 }
 .bb-footer-023 {
   @apply h-[5rem] w-[6.8125rem];
@@ -324,16 +324,16 @@
   @apply text-[0.875rem] font-semibold;
 }
 .bb-footer-032 {
-  @apply mt-1 text-[1rem] font-medium;
+  @apply mt-1 break-words text-[1rem] font-medium;
 }
 .bb-footer-033 {
-  @apply mx-auto mt-8 max-w-[58rem] border-t border-[#003951] pt-5 font-[family-name:var(--font-dm-sans)] text-[0.875rem] leading-[1.5rem] text-white sm:flex sm:items-center sm:justify-between;
+  @apply mx-auto mt-8 w-full max-w-[90rem] border-t border-[#003951] pt-5 font-[family-name:var(--font-dm-sans)] text-[0.875rem] leading-[1.5rem] text-white md:flex md:items-center md:justify-between md:gap-8;
 }
 .bb-footer-034 {
   @apply font-bold;
 }
 .bb-footer-035 {
-  @apply mt-3 flex flex-wrap gap-4 sm:mt-0;
+  @apply mt-3 flex flex-wrap gap-x-4 gap-y-2 md:mt-0 md:shrink-0;
 }
 .bb-footer-036 {
   @apply text-white no-underline transition-colors hover:text-[#FE8F02];
