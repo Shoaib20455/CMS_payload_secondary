@@ -291,7 +291,7 @@
   @apply cursor-pointer font-[family-name:var(--font-dm-sans)] text-[0.875rem] font-normal leading-[1.5625rem] text-white transition-colors duration-200 hover:text-[#FE8F02];
 }
 .bb-footer-021 {
-  @apply relative z-[30] w-full overflow-hidden bg-[#012F42] px-5 py-10 sm:px-8 sm:py-12 lg:px-12 min-[120rem]:hidden;
+  @apply relative z-[30] w-full overflow-hidden bg-[#012F42] px-5 py-10 sm:px-8 sm:py-12 lg:px-12;
 }
 .bb-footer-022 {
   @apply mx-auto grid w-full max-w-[90rem] gap-8 sm:grid-cols-2 min-[70rem]:grid-cols-[1.35fr_0.7fr_1fr_1fr] min-[70rem]:gap-10;
@@ -306,7 +306,10 @@
   @apply mt-5 flex gap-3;
 }
 .bb-footer-026 {
-  @apply flex h-[2.25rem] w-[2.25rem] items-center justify-center rounded-[0.3125rem] bg-[#003951] font-[family-name:var(--font-dm-sans)] text-[0.75rem] font-bold text-white;
+  @apply flex h-[2.25rem] w-[2.25rem] items-center justify-center rounded-[0.3125rem] bg-[#003951] text-white no-underline transition-colors duration-200 hover:bg-[#FE8F02];
+}
+.bb-footer-026 svg {
+  @apply h-[1.125rem] w-[1.125rem] fill-current;
 }
 .bb-footer-027 {
   @apply font-[family-name:var(--font-outfit)] text-[1.25rem] font-semibold leading-[1.75rem] text-[#FE8F02];
