@@ -249,12 +249,12 @@ export default function StatePage() {
 
             <div className="mt-[70px] flex flex-wrap justify-center gap-6">
               {industries.map((industry) => (
-                <span
+                <h3
                   key={industry}
                   className="rounded-[5px] bg-white/10 px-8 py-5 font-[family-name:var(--font-outfit)] text-[24px] font-semibold capitalize text-white backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#FE8F02] hover:shadow-[0_10px_26px_rgba(254,143,2,0.28)] lg:px-12 lg:py-6 lg:text-[30px]"
                 >
                   {industry}
-                </span>
+                </h3>
               ))}
             </div>
           </div>

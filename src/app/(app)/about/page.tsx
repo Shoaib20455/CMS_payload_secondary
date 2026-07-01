@@ -330,9 +330,9 @@ export default function AboutPage() {
 
             <div className="about-hero-copy">
               <h1 id="about-title">About Box Truck Dispatching</h1>
-              <p className="about-hero-kicker">
+              <h3 className="about-hero-kicker">
                 Keeping Box Trucks Moving Across America
-              </p>
+              </h3>
               <p>
                 At Box Truck Dispatching, we help owner-operators and fleet
                 owners find profitable freight, reduce deadhead miles, and keep
