@@ -330,14 +330,14 @@ export default function StatePage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] hover:shadow-[0_10px_24px_rgba(254,143,2,0.24)] active:scale-95"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white no-underline transition-all duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 cursor-pointer"
             >
               Start Dispatching Today
             </Link>
 
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03] hover:bg-white/10 hover:shadow-[0_10px_24px_rgba(254,143,2,0.20)] active:scale-95"
+              className="inline-flex h-12 items-center justify-center rounded-[5px] border border-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-[#FE8F02] no-underline transition-all duration-300 hover:scale-[1.03] duration-300 hover:scale-105 active:scale-95 cursor-pointer"
             >
               Get a Free Consultation
             </Link>
@@ -395,7 +395,7 @@ function ServicePicker() {
 
         <button
           type="submit"
-          className="h-12 rounded-[5px] bg-[#FE8F02] px-7 font-[family-name:var(--font-outfit)] text-[18px] font-medium leading-8 text-white transition-all duration-300 hover:scale-[1.03] hover:bg-[#E07D02] hover:shadow-[0_10px_24px_rgba(254,143,2,0.24)] active:scale-95"
+          className="h-12 rounded-[5px] bg-[#FE8F02] px-7 font-[family-name:var(--font-outfit)] text-[18px] font-medium leading-8 text-white transition-all duration-300 hover:scale-[1.03] duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 cursor-pointer"
         >
           Submit
         </button>
@@ -476,8 +476,7 @@ function CtaSection() {
         </p>
       </div>
 
-      <form className="mt-10 rounded-[10px] bg-white/10 p-6 lg:mt-0 lg:h-[405px] lg:self-center lg:p-[50px] lg:pb-0">
-        <div className="grid gap-5 sm:grid-cols-2">
+<form className="mt-10 rounded-[10px] bg-white/10 p-6 lg:mt-0 lg:self-center lg:p-[50px]">        <div className="grid gap-5 sm:grid-cols-2">
           <CtaField label="First Name" placeholder="Enter First Name" />
           <CtaField label="Last Name" placeholder="Enter Last Name" />
           <CtaField label="Phone Number" placeholder="+1 (000) 123-1234" />
@@ -492,7 +491,7 @@ function CtaSection() {
 
         <button
           type="submit"
-          className="mt-5 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-all duration-300 hover:scale-[1.01] hover:bg-[#E07D02] active:scale-[0.99]"
+          className="mt-5 flex h-12 w-full items-center justify-center rounded-[5px] bg-[#FE8F02] px-5 font-[family-name:var(--font-outfit)] text-[18px] font-medium capitalize text-white transition-all duration-300 duration-300 hover:scale-105 hover:bg-[#E07D02] active:scale-95 cursor-pointer"
         >
           Get Started Now
         </button>
