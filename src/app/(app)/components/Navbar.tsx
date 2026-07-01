@@ -14,7 +14,22 @@ const navItems = [
   { label: "Contact", href: "/contact" },
   { label: "Blog", href: "/blog" },
 ];
-
+const serviceDropdownItems = [
+  { label: "Load Booking", href: "/service/load-booking" },
+  { label: "Dedicated Truck Dispatcher", href: "/service/dedicated-truck-dispatcher" },
+  { label: "Factoring", href: "/service/factoring" },
+  { label: "Lease On", href: "/service/lease-on" },
+];
+const stateDropdownItems = [
+  { label: "Ohio", href: "/state/stateDetails" },
+  { label: "Indiana", href: "/state/indiana" },
+  { label: "Texas", href: "/state/texas" },
+  { label: "Florida", href: "/state/florida" },
+  { label: "New York", href: "/state/new-york" },
+  { label: "California", href: "/state/california" },
+  { label: "Kentucky", href: "/state/kentucky" },
+  { label: "Illinois", href: "/state/illinois" },
+];
 function isNavItemActive(pathname: string, href: string) {
   if (href === "/") return pathname === href;
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -39,28 +54,90 @@ export default function Navbar() {
         </Link>
 
         <nav
-          className="absolute inset-y-0 left-28 right-52 flex items-center justify-center gap-5 xl:gap-8 2xl:gap-[3.125rem]"
-          aria-label="Primary navigation"
-        >
-          {navItems.map(({ label, href }) => {
-            const isActive = isNavItemActive(pathname, href);
+  className="absolute inset-y-0 left-28 right-52 flex items-center justify-center gap-5 xl:gap-8 2xl:gap-[3.125rem]"
+  aria-label="Primary navigation"
+>
+  {navItems.map(({ label, href }) => {
+    const isActive = isNavItemActive(pathname, href);
 
-            return (
-              <Link
-                key={href}
-                href={href}
-                aria-current={isActive ? "page" : undefined}
-                className={`font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200 ${
-                  isActive
-                    ? "text-[#FE8F02]"
-                    : "text-[#111827] hover:text-[#FE8F02]"
-                }`}
-              >
-                {label}
-              </Link>
-            );
-          })}
-        </nav>
+    const dropdownItems =
+      label === "Service"
+        ? serviceDropdownItems
+        : label === "State"
+          ? stateDropdownItems
+          : null;
+
+    if (dropdownItems) {
+      return (
+        <div key={href} className="group relative flex h-full items-center">
+          <Link
+            href={href}
+            aria-current={isActive ? "page" : undefined}
+            className={`inline-flex items-center gap-1.5 font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200 ${
+              isActive
+                ? "text-[#FE8F02]"
+                : "text-[#111827] hover:text-[#FE8F02]"
+            }`}
+          >
+            <span>{label}</span>
+
+            <svg
+              className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180"
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 7.5L10 12.5L15 7.5"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+
+          <div className="pointer-events-none absolute left-1/2 top-full w-[280px] -translate-x-1/2 translate-y-3 rounded-[10px] border border-[#E5E7EB] bg-white p-3 opacity-0 shadow-[0_16px_36px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+            <div className="absolute -top-3 left-0 h-3 w-full" />
+
+            {dropdownItems.map((item) => {
+              const isDropdownActive = isNavItemActive(pathname, item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block rounded-[7px] px-4 py-3 font-[family-name:var(--font-dm-sans)] text-[16px] font-semibold no-underline transition-all duration-200 ${
+                    isDropdownActive
+                      ? "bg-[#FFF4E5] text-[#FE8F02]"
+                      : "text-[#111827] hover:bg-[#FFF4E5] hover:text-[#FE8F02]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <Link
+        key={href}
+        href={href}
+        aria-current={isActive ? "page" : undefined}
+        className={`font-[family-name:var(--font-dm-sans)] text-[1.125rem] font-bold leading-[1.5625rem] no-underline transition-colors duration-200 ${
+          isActive
+            ? "text-[#FE8F02]"
+            : "text-[#111827] hover:text-[#FE8F02]"
+        }`}
+      >
+        {label}
+      </Link>
+    );
+  })}
+</nav>
 
         <Link
           href="/contact"

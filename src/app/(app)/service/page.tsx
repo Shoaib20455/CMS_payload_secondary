@@ -52,30 +52,6 @@ const services = [
     image: "/Images/Rectangle 1117@2x (3).webp",
   },
   {
-    title: "Paper Work",
-    description:
-      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
-    image: "/Images/Rectangle 1117@2x (1).webp",
-  },
-  {
-    title: "Driver Hiring",
-    description:
-      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
-    image: "/Images/Rectangle 1117@2x (5).webp",
-  },
-  {
-    title: "MC Setup",
-    description:
-      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
-    image: "/Images/Rectangle 1117@2x (2).webp",
-  },
-  {
-    title: "Accounting",
-    description:
-      "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
-    image: "/Images/Rectangle 1117@2x.webp",
-  },
-  {
     title: "Lease On",
     description:
       "We negotiate with brokers, find high-paying loads, and keep your truck moving with profitable freight. Our team focuses on maximizing revenue while minimizing deadhead miles.",
